@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub, FaLinkedin, FaBootstrap,} from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
-import todoimg from "./assets/todo.PNG";
-import cryptoImg from "./assets/Crypto-app.png";
-import codingimg from "./assets/coding-man.jpg"
 import "./App.css"; // Custom styles
 
 const App = () => {
@@ -98,7 +95,7 @@ const App = () => {
           {/* Project 1 - Todo App */}
           <div className="col-md-6 col-lg-4">
             <div className="card shadow project-card h-100">
-              <img src={todoimg} className="card-img-top" alt="Todo App" />
+              <img src="todo.PNG" className="card-img-top" alt="Todo App" />
               <div className="card-body">
                 <h5 className="card-title">Todo App</h5>
                 <p className="card-text">
@@ -116,7 +113,7 @@ const App = () => {
           {/* Project 2 - Crypto App */}
           <div className="col-md-6 col-lg-4">
             <div className="card shadow project-card h-100">
-              <img src={cryptoImg} className="card-img-top" alt="Crypto App" />
+              <img src="Crypto-app.PNG" className="card-img-top" alt="Crypto App" />
               <div className="card-body">
                 <h5 className="card-title">Crypto App</h5>
                 <p className="card-text">
