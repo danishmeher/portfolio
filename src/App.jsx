@@ -129,16 +129,16 @@ const App = () => {
           </div>
           <div className="col-md-6 col-lg-4">
             <div className="card shadow project-card h-100">
-              <img src="gemini.PNG" className="card-img-top" alt="Crypto App" />
+              <img src="Quiz.PNG" className="card-img-top" alt="Crypto App" />
               <div className="card-body">
-                <h5 className="card-title">Gemini AI</h5>
+                <h5 className="card-title">Quiz App</h5>
                 <p className="card-text">
-                  An AI-powered conversational app by Google for research, writing, coding, and creative problem-solving.
+                  An interactive quiz application with multiple-choice questions, score tracking, and instant feedback built using React + JavaScript.
                 </p>
               </div>
               <div className="card-footer text-center">
-                <a href="https://gemini-ai-lime-nine.vercel.app/" className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Live Demo</a>
-                <a href="https://github.com/danishmeher/crypto-app" className="btn btn-sm btn-outline-dark ms-2" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://quiz-app-gilt-nine-92.vercel.app/" className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Live Demo</a>
+                <a href="https://github.com/danishmeher/quiz-app" className="btn btn-sm btn-outline-dark ms-2" target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </div>
           </div>
