@@ -1,0 +1,108 @@
+.contact-section {
+  padding: 100px 20px;
+  background: radial-gradient(circle at top left, #0a0a0a, #001122 85%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 15%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.contact-text {
+  color: #cfd8dc;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  outline: none;
+  font-size: 1rem;
+  resize: none;
+}
+
+.input-group label {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+  top: -10px;
+  font-size: 0.9rem;
+  color: #00f0ff;
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #00f0ff, #0072ff);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 0;
+  box-shadow: 0 0 15px #00f0ff;
+  transition: 0.3s;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 25px #00f0ff;
+  transform: translateY(-3px);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff;
+  transition: transform 0.3s ease, color 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: white;
+}
