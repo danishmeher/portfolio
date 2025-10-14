@@ -29,7 +29,7 @@ const Navbar = () => {
 
         {/* Toggler for mobile */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler bg-secondary"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -38,8 +38,8 @@ const Navbar = () => {
         </button>
 
         {/* Nav Links */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto fw-semibold">
+        <div className="collapse navbar-collapse " id="navbarNav">
+          <ul className="navbar-nav ms-auto fw-semibold ">
             {location.pathname === "/" && (
               <>
                 <li className="nav-item">
