@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import ReCAPTCHA from "react-google-recaptcha";
 import "./Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
+  const recaptchaRef = useRef();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,14 +18,18 @@ const Contact = () => {
     setStatus("Sending...");
 
     try {
-      const response = await fetch("https://portfolio-backend-lies.onrender.com/send", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(formData),
-});
+      // Get reCAPTCHA token
+      const token = await recaptchaRef.current.executeAsync();
+      recaptchaRef.current.reset();
 
+      // Add token to form data
+      const dataToSend = { ...formData, token };
+
+      const response = await fetch("https://portfolio-backend-lies.onrender.com/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataToSend),
+      });
 
       const data = await response.json();
 
@@ -31,10 +37,10 @@ const Contact = () => {
         setStatus("Message sent successfully ✅");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus(data.message || "Failed to send ❌");
+        setStatus(data.error || "Failed to send ❌");
       }
     } catch (error) {
-      console.error(error);
+      console.error("❌ Error sending message:", error);
       setStatus("Something went wrong ❌");
     }
   };
@@ -107,6 +113,13 @@ const Contact = () => {
           </motion.button>
 
           {status && <p className="text-center mt-3">{status}</p>}
+
+          {/* Invisible reCAPTCHA */}
+          <ReCAPTCHA
+            sitekey="6LdCyugrAAAAAFmQR1W2qWOiv9fMx3Wux-tCRyNd"
+            size="invisible"
+            ref={recaptchaRef}
+          />
         </form>
 
         <div className="social-links">
